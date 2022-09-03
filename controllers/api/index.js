@@ -5,7 +5,7 @@ const songRoutes = require('./song-routes');
 const artistRoutes = require('./artist-routes');
 
 router.use('/users', userRoutes);
-router.use('/songs', songRoutes);
-router.use('/artists', artistRoutes);
+// router.use('/songs', songRoutes);
+// router.use('/artists', artistRoutes);
 
 module.exports = router;

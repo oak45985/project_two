@@ -50,3 +50,25 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+//DELETE ONE USER
+router.delete('/:id', checkAuth, (req, res) => {
+    User.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbUserData => {
+        if(!dbUserData) {
+            res.status(404).json({ message: 'No user found with ID' });
+            return;
+        }
+        res.json(dbUserData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+module.exports = router;
