@@ -44,3 +44,5 @@ Artist.init(
         modelName: 'artist'
     }
 )
+
+module.exports = Artist;
