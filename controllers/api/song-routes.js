@@ -127,4 +127,24 @@ router.put('/:id', checkAuth, (req, res) => {
     });
 });
 
+//DELETE ONE SONG
+router.delete('/:id', checkAuth, (req, res) => {
+    Song.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbSongData => {
+        if(!dbSongData) {
+            res.status(404).json({ message: "No song matches ID" });
+            return;
+        }
+        res.json(dbSongData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 module.exports = router;
