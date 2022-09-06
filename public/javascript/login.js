@@ -4,7 +4,7 @@ async function liForm(event) {
     const email = document.querySelector('#email-li').value.trim();
     const password = document.querySelector('#pw-li').value.trim();
 
-    if (email && pw) {
+    if (email && password) {
         const response = await fetch('/api/users/login', {
             method: 'post',
             body: JSON.stringify({

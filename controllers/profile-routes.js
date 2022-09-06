@@ -14,8 +14,8 @@ router.get('/', checkAuth, (req, res) => {
             'key',
             'mood',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
-            'like_count']
+            // [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
+            // 'like_count']
         ],
         include: [
             {
@@ -51,8 +51,8 @@ router.get('/song/:id', checkAuth, (req, res) => {
             'key',
             'mood',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
-            'like_count']
+            // [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
+            // 'like_count']
         ],
         include: [
             {
