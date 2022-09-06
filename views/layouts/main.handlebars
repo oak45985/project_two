@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Tunes</title>
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1>
+                <a href="/">Get Tunes</a>
+            </h1>
+            <nav>
+                <a href="/tracks">TRACKS</a>
+                <a href="/artists">ARTISTS</a>
+                {{#if loggedIn}}
+                <a href="/profile">PROFILE</a>
+                <button id="logout">LOG OUT</button>
+                {{else}}
+                <a href="/login">LOGIN</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            Get Tunes created by...
+        </footer>
+    </div>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+    </body>
+</body>
+
+</html>
