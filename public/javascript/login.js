@@ -44,6 +44,7 @@ async function suForm(event) {
 
         if (response.ok) {
             console.log('User Created');
+            document.location.replace('/profile');
         } else {
             alert(response.statusText);
         }
