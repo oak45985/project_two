@@ -6,6 +6,9 @@ const checkAuth = require('../utils/auth');
 //GET ALL SONGS
 router.get('/', checkAuth, (req, res) => {
     Song.findAll({
+        where: {
+            user_id: req.session.user_id
+        },
         order: [['title','DESC']],
         attributes: [
             'id',
@@ -42,7 +45,7 @@ router.get('/', checkAuth, (req, res) => {
 router.get('/song/:id', checkAuth, (req, res) => {
     Song.findOne({
         where: {
-            id: req.params.id
+            user_id: req.session.user_id
         },
         attributes: [
             'id',

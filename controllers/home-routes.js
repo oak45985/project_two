@@ -13,8 +13,8 @@ router.get('/', (req, res) => {
             'key',
             'mood',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
-            'like_count']
+            // [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
+            // 'like_count']
         ],
         include: [
             {
