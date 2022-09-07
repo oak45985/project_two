@@ -11,7 +11,7 @@
     </div>
     <div>
         <label for="song-artist-wp">ARTIST'S WEBPAGE:</label>
-        <input type="text" id="song-artist-wp" name="song-artist-wep"/>
+        <input type="text" id="song-artist-wp" name="song-artist-wp"/>
     </div>
     <div>
         <label for="song-bpm">BPM:</label>
@@ -21,4 +21,21 @@
         <label for="song-key">KEY:</label>
         <input type="text" id="song-key" name="song-key"/>
     </div>
+    <div>
+        <button type="submit">UPLOAD SONG</button>
+    </div>
 </form>
+{{#if songs.length}}
+<section>
+    <h2>Songs You've Uploaded</h2>
+    <ul>
+        {{#each songs as |song|}}
+        <li>
+            {{>song-card song}}
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
+
+<script src="/javascript/uploadsong.js"></script>
