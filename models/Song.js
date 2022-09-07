@@ -39,6 +39,17 @@ Song.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        artist_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        artist_web: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                isUrl: true
+            }
+        },
         bpm: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -55,13 +66,6 @@ Song.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'id'
-            }
-        },
-        artist_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'artist',
                 key: 'id'
             }
         }

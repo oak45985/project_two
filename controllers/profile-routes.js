@@ -13,6 +13,8 @@ router.get('/', checkAuth, (req, res) => {
         attributes: [
             'id',
             'title',
+            'artist_name',
+            'artist_web',
             'bpm',
             'key',
             'mood',
@@ -21,10 +23,6 @@ router.get('/', checkAuth, (req, res) => {
             // 'like_count']
         ],
         include: [
-            {
-                model: Artist,
-                attributes: ['id', 'artist_name', 'artist_webpage']
-            },
             {
                 model: User,
                 attributes: ['id', 'username']
@@ -50,6 +48,8 @@ router.get('/song/:id', checkAuth, (req, res) => {
         attributes: [
             'id',
             'title',
+            'artist_name',
+            'artist_web',
             'bpm',
             'key',
             'mood',
@@ -58,10 +58,6 @@ router.get('/song/:id', checkAuth, (req, res) => {
             // 'like_count']
         ],
         include: [
-            {
-                model: Artist,
-                attributes: ['artist_name']
-            },
             {
                 model: User,
                 attributes: ['username']

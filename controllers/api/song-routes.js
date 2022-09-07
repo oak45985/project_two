@@ -10,6 +10,8 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'title',
+            'artist_name',
+            'artist_web',
             'bpm',
             'key',
             'mood',
@@ -18,10 +20,6 @@ router.get('/', (req, res) => {
             'like_count']
         ],
         include: [
-            {
-                model: Artist,
-                attributes: ['id', 'artist_name', 'artist_webpage']
-            },
             {
                 model: User,
                 attributes: ['id', 'username']
@@ -44,6 +42,8 @@ router.get('/:id', (req, res) => {
         attributes: [
             'id',
             'title',
+            'artist_name',
+            'artist_web',
             'bpm',
             'key',
             'mood',
@@ -52,10 +52,6 @@ router.get('/:id', (req, res) => {
             'like_count']
         ],
         include: [
-            {
-                model: Artist,
-                attributes: ['artist_name']
-            },
             {
                 model: User,
                 attributes: ['username']
@@ -79,6 +75,8 @@ router.get('/:id', (req, res) => {
 router.post('/', checkAuth, (req, res) => {
     Song.create({
         title: req.body.title,
+        artist_name: req.body.artist_name,
+        artist_web: req.body.artist_web,
         bpm: req.body.bpm,
         key: req.body.key,
         mood: req.body.mood,

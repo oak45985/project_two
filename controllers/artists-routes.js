@@ -5,7 +5,7 @@ const { Song, User, Like, Artist } = require('../models');
 //GET ALL SONGS
 router.get('/', (req, res) => {
     Song.findAll({
-        order: [['created_at','ASC']],
+        order: [['artist_name','ASC']],
         attributes: [
             'id',
             'title',
@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
     })
     .then(dbSongData => {
         const songs = dbSongData.map(song => song.get({ plain: true }));
-        res.render('homepage', {
+        res.render('artists', {
             songs,
             loggedIn: req.session.loggedIn
         });
@@ -36,15 +36,6 @@ router.get('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
-});
-
-//LOGIN
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('login');
 });
 
 module.exports = router;

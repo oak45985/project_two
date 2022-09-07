@@ -24,11 +24,7 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Song,
-                attributes: ['id', 'title', 'bpm', 'key', 'mood', 'created_at'],
-                include: {
-                    Model: Artist,
-                    attributes: ['artist_name']
-                }
+                attributes: ['id', 'title', 'artist_name', 'artist_web', 'bpm', 'key', 'mood', 'created_at'],
             },
             {
                 model: Song,
