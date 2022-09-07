@@ -12,9 +12,7 @@ async function uploadSong(event) {
         body: JSON.stringify({
             title,
             bpm,
-            key,
-            artist,
-            webpage
+            key
         }),
         headers: {
             'Content-Type': 'application/json'
