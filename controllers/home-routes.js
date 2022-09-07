@@ -3,6 +3,8 @@ const sequelize = require('../config/connection');
 const { Song, User, Like, Artist } = require('../models');
 
 //GET ALL SONGS
+// router.get('/', (req, res) => {
+//     res.render('homepage')});
 router.get('/', (req, res) => {
     Song.findAll({
         order: [['created_at','ASC']],

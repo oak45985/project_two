@@ -1,0 +1,23 @@
+:root {
+    --tan: #F7ECDE;
+    --cream: #E9DAC1;
+    --teal: #9ED2C6;
+    --green: #54BAb9; 
+    --light-blue: #A6D1E6;
+    --navy: #7F5283;
+    --dark-gray: #3D3C42;
+}
+
+@font-face {
+    font-family: Disfont;
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+}
+
+a{
+    color:var(--navy);
+    font-family: Disfont;
+}
+
+a:hover {
+    color:var(--light-blue);
+}
