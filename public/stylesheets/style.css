@@ -9,15 +9,28 @@
 }
 
 @font-face {
-    font-family: Disfont;
+    font-family: 'Disfont';
     src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 }
 
-a{
+nav a{
     color:var(--navy);
-    font-family: Disfont;
+    font-family: 'Disfont';
+    text-decoration: none;
+    
 }
 
-a:hover {
+nav a:hover {
     color:var(--light-blue);
+    text-decoration: none;
 }
+
+body{
+    font-family: 'Disfont';
+}
+
+#login-con{
+    background: var(--light-blue);
+    color:var(--navy);
+}
+

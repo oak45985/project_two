@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
         res.render('homepage', {
             songs,
             loggedIn: req.session.loggedIn
-        });
+        })
     })
     .catch(err => {
         console.log(err);
