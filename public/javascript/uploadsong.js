@@ -7,22 +7,24 @@ async function uploadSong(event) {
     const bpm = document.querySelector('input[name="song-bpm"]').value;
     const key = document.querySelector('input[name="song-key"]').value;
 
-    const response = await fetch(`/api/songs`, {
-        method: 'POST',
-        body: JSON.stringify({
-            title,
-            bpm,
-            key
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
+    if (title && artist && webpage && bpm && key) {
+        const response = await fetch(`/api/songs`, {
+            method: 'POST',
+            body: JSON.stringify({
+                title,
+                bpm,
+                key
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
 
-    if (response.ok) {
-        document.location.replace('/profile');
-    } else {
-        alert(response.statusText);
+        if (response.ok) {
+            document.location.replace('/profile');
+        } else {
+            alert(response.statusText);
+        };
     }
 }
 
