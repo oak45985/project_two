@@ -68,7 +68,7 @@ router.get('/artist/:id', (req, res) => {
         }
         const artist = dbArtistData.get({ plain: true });
 
-        res.render('sing-artist', {
+        res.render('single-artist', {
             artist,
             loggedIn: req.session.loggedIn
         });
