@@ -93,7 +93,7 @@ body {
 }
 
 #artist-col h1 {
-  color: var(--light-blue);
+  color: var(--dark-gray);
 }
 
 #artist-col a {
@@ -118,6 +118,23 @@ body {
   border-radius: 2%;
 }
 
+#track-col {
+  color:var(--navy)
+}
+
+#track-col h1 {
+  font-family: 'Mont';
+  color: var(--dark-gray);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.song {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: var(--light-blue) 2px solid;
+  border-radius: 2%;
+}
 
 footer{
   text-align: center;
