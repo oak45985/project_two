@@ -3,6 +3,11 @@ const sequelize = require('../config/connection');
 const { Song, User, Like, Artist } = require('../models');
 
 //GET ALL SONGS
+router.get('/home', (req, res) => {
+    res.render('home');
+  });
+
+
 router.get('/', (req, res) => {
     Song.findAll({
         order: [['created_at','ASC']],
@@ -32,7 +37,7 @@ router.get('/', (req, res) => {
         res.render('homepage', {
             songs,
             loggedIn: req.session.loggedIn
-        });
+        })
     })
     .catch(err => {
         console.log(err);

@@ -5,22 +5,124 @@
     --green: #54BAB9;
     --light-blue: #A6D1E6;
     --navy: #7F5283;
-    --dark-gray: #3D3C42;
+    --dark-gray: #3D3C42; 
   }
+
   @font-face {
-    font-family: ‘Disfont’;
+    font-family: 'Mont';
     src: url(‘https://fonts.googleapis.com/css2?family=Montserrat&display=swap’);
   }
+
   a{
     color:var(--navy);
-    font-family: ‘Disfont’;
+    font-family: 'Mont';
     text-decoration: none;
   }
+
   a:hover {
     color:var(--light-blue);
   }
-  body{
+
+  body {
     font-family: ‘Disfont’;
+
   }
   
-  
+
+@font-face {
+    font-family: 'Mont';
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family:'Oswald';
+    src: url('../fonts/Oswald-VariableFont_wght.ttf');
+}
+
+#Logo-con {
+    font-family: 'Mont';
+    text-align: center;
+    font-size: 50px;
+    background-color: var(--light-gray);
+}
+
+#logo-col {
+    background-image: url('../../images/image-banner.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed, -120px;
+}
+
+#Logo-con a {
+    color: #9ED2C6;
+}
+
+#Logo-con a:hover {
+    color: var(--light-blue);
+    text-decoration: none;
+}
+
+nav a {
+    color:var(--navy);
+    font-family: 'Oswald';
+    text-decoration: none;
+    padding:20px;
+}
+
+nav a:hover {
+    color:var(--light-blue);
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Oswald';
+    background-color:#A6D1E6;
+}
+
+#login-con {
+    background: var(--light-blue);
+    color:var(--navy);
+    font-family: 'Mont';
+    padding:20px;
+    opacity: 95%;
+}
+
+#login-con input {
+    opacity: 60%;
+}
+
+#login-con p {
+    font-style: italic;
+}
+
+#signup-con {
+    background: var(--light-blue);
+    color:var(--navy);
+    font-family: 'Mont';
+    padding:20px 20px 20px 100px;
+    opacity: 95%;
+}
+
+#signup-con input {
+    opacity: 60%;
+}
+
+#newsong-con {
+    padding-left: 40px;
+    padding-top: 40px;
+}
+
+footer{
+    text-align: center;
+    padding-top: 50px;
+    font-family: 'Oswald';
+   
+
+}
+
+p {
+    font-size: larger;
+    text-align: center;
+    text-decoration-color: #7F5283;
+}
+

@@ -1,36 +1,47 @@
-<form class="li-form">
-    <div>
-        <label for="email-li">EMAIL:</label>
-        <input type="text" id="email-li" />
+<div class="container-fluid" id="login-con">
+    <div class="row" id="login-row">
+        <form class="li-form">
+            <div class="d-flex flex-column mb-3">
+                <label for="email-li">EMAIL:</label>
+                    <input type="text" id="email-li" />
+            </div>
+            <div class="d-flex flex-column mb-3">
+                <label for="pw-li">PASSWORD:</label>
+                    <input type="password" id="pw-li" />
+            </div>
+            <div>
+                <button class="btn btn-success" type="submit">LOGIN</button>
+            </div>
+            <div class="d-flex flex-column mb-3">
+                <p>Dont have an account yet? <br> Sign-up for an account below!</p>
+            </div>
+        </form>
     </div>
-    <div>
-        <label for="pw-li">PASSWORD:</label>
-        <input type="password" id="pw-li" />
+</div>
+<div class="container-fluid" id="signup-con">
+    <div class="row" id="signup-row">
+        <form class="su-form">
+            <div class="d-flex flex-column mb-3">
+                <label for="user-su">USERNAME:</label>
+                    <input type="text" id="user-su" />
+            </div>
+            <div class="d-flex flex-column mb-3">
+                <label for="email-su">EMAIL:</label>
+                    <input type="text" id="email-su" />
+            </div>
+            <div class="d-flex flex-column mb-3">
+                <label for="userwp-su">WEBPAGE:</label>
+                    <input type="text" id="userwp-su" />
+            </div>
+            <div class="d-flex flex-column mb-3">
+                <label for="pw-su">PASSWORD:</label>
+                    <input type="password" id="pw-su" />
+            </div>
+            <div>
+                <button class="btn btn-success" type="submit">SIGN UP</button>
+            </div>
+        </form>
     </div>
-    <div>
-        <button type="submit">LOGIN</button>
-    </div>
-</form>
-
-<form class="su-form">
-    <div>
-        <label for="user-su">USERNAME:</label>
-        <input type="text" id="user-su" />
-    </div>
-    <div>
-        <label for="email-su">EMAIL:</label>
-        <input type="text" id="email-su" />
-    </div>
-    <div>
-        <label for="userwp-su">WEBPAGE:</label>
-        <input type="text" id="userwp-su" />
-    </div>
-    <div>
-        <label for="pw-su">PASSWORD:</label>
-        <input type="password" id="pw-su" />
-    </div>
-    <div>
-        <button type="submit">SIGN UP</button>
-    </div>
-</form>
+</div>
 <script src="/javascript/login.js"></script>
+

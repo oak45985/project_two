@@ -1,9 +1,27 @@
-<h1>You're now logged in!</h1>
-
-<form class="new-song">
-    <div>
-        <label for="song-title">TITLE:</label>
-        <input type="text" id="song-title" name="song-title"/>
+<div class="container-fluid" id="newsong-con">
+    <div class="row" id="newsong-row">
+        <form class="new-song">
+            <div class="d-flex flex-column mb-3">
+                <label for="song-title">TITLE:</label>
+                    <input type="text" id="song-title" name="song-title"/>
+            </div>
+            <div class="d-flex flex-column mb-3">
+                <label for="song-artist">ARTIST:</label>
+                    <input type="text" id="song-artist" name="song-artist"/>
+            </div>
+            <div class="d-flex flex-column mb-3">
+                <label for="song-artist-wp">ARTIST'S WEBPAGE:</label>
+                    <input type="text" id="song-artist-wp" name="song-artist-wep"/>
+            </div>
+            <div class="d-flex flex-column mb-3">
+                <label for="song-bpm">BPM:</label>
+                    <input type="text" id="song-bpm" name="song-bpm"/>
+            </div>
+            <div class="d-flex flex-column mb-3">
+                <label for="song-key">KEY:</label>
+                    <input type="text" id="song-key" name="song-key"/>
+            </div>
+        </form>
     </div>
     <div>
         <label for="song-artist">ARTIST:</label>
@@ -39,3 +57,4 @@
 {{/if}}
 
 <script src="/javascript/uploadsong.js"></script>
+</div>

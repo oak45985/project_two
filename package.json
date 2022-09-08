@@ -20,6 +20,7 @@
   "homepage": "https://github.com/oak45985/project_two#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bootstrap": "^5.2.0",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
