@@ -45,4 +45,10 @@ Artist.init(
     }
 )
 
+// Artist.bulkCreate([
+//     {artist_name: "Don Diablo", artist_webpage: "dondiablo.com"},
+//     {artist_name: "John Summit", artist_webpage: "johnsummit.com"},
+//     {artist_name: "Above & Beyond", artist_webpage: "Aboveandbeyond.com"},
+// ]);
+
 module.exports = Artist;
