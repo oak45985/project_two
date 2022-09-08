@@ -1,53 +1,56 @@
-// const router = require('express').Router();
-// const sequelize = require('../config/connection');
-// const { Song, User, Like, Artist, Dj} = require('../models');
+const router = require('express').Router();
+const { Dj } = require('../models');
+// Import the custom middleware
+// const withAuth = require('../utils/auth');
 
-// //GET ALL SONGS
+// GET all galleries for homepage
+router.get('/', async (req, res) => {
+  try {
+    const dbDjData = await Dj.findAll({
+      include: [
+        {
+          model: song,
+          attributes: ['title', 'bpm'],
+        },
+      ],
+    });
 
-// router.get('/', (req, res) => {
-//     Song.findAll({
-//         order: [['created_at','ASC']],
-//         attributes: [
+    const djs = dbDjData.map((dj) =>
+      dj.get({ plain: true })
+    );
+
+    res.render('/homepage', { djs });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// // GET one gallery
+// // Use the custom middleware before allowing the user to access the gallery
+// router.get('/dj/:id', async (req, res) => {
+//   try {
+//     const dbDjData = await Dj.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: song,
+//           attributes: [
 //             'id',
+//             'song_url',
 //             'title',
 //             'bpm',
-//             'key',
-//             'mood',
-//             'created_at',
-//             [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
-//             'like_count']
-//         ],
-//         include: [
-//             {
-//                 model: Artist,
-//                 attributes: ['id', 'artist_name', 'artist_webpage']
-//             },
-//             {
-//                 model: User,
-//                 attributes: ['id', 'username']
-//             }
-//         ]
-//     })
-//     .then(dbSongData => {
-//         const songs = dbSongData.map(song => song.get({ plain: true }));
-//         res.render('homepage', {
-//             songs,
-//             loggedIn: req.session.loggedIn
-//         })
-//     })
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
+//             'key'
+//           ],
+//         },
+//       ],
 //     });
+
+//     const dj = dbDjData.get({ plain: true });
+//     res.render('djs', { dj });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
 // });
 
-// //LOGIN
-// router.get('/login', (req, res) => {
-//     if (req.session.loggedIn) {
-//         res.redirect('/');
-//         return;
-//     }
-//     res.render('login');
-// });
-
-// module.exports = router;
+module.exports = router;

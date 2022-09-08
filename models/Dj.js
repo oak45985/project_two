@@ -31,12 +31,12 @@ Dj.init(
     }
 );
 
-// Dj.bulkCreate([
-//     {dj_name: "Chip Hvzvrd", dj_webpage: "https://soundcloud.com/chiphvzvrd"},
-//     {dj_name: "STRYTLLR", dj_webpage: "https://soundcloud.com/imstrytllr"},
-//     {dj_name: "CHiP", dj_webpage: "https://soundcloud.com/chippena"},
-//     {dj_name: "UNICHORD", dj_webpage: "https://soundcloud.com/unichordofficial"},
-//     {dj_name: "SinSaySays", dj_webpage: "https://soundcloud.com/sinsaysays"},
-// ]);
+Dj.bulkCreate([
+    {dj_name: "Chip Hvzvrd", dj_webpage: "https://soundcloud.com/chiphvzvrd"},
+    {dj_name: "STRYTLLR", dj_webpage: "https://soundcloud.com/imstrytllr"},
+    {dj_name: "CHiP", dj_webpage: "https://soundcloud.com/chippena"},
+    {dj_name: "UNICHORD", dj_webpage: "https://soundcloud.com/unichordofficial"},
+    {dj_name: "SinSaySays", dj_webpage: "https://soundcloud.com/sinsaysays"},
+]);
 
 module.exports = Dj;
