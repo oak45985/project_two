@@ -77,26 +77,19 @@ router.get('/:id', (req, res) => {
 
 //CREATE SONG
 router.post('/', checkAuth, (req, res) => {
-    Artist.create({
-        artist_name: req.body.artist_name,
-        artist_webpage: req.body.artist_webpage
-    })
-    .then(dbArtistData => {
         Song.create({
             title: req.body.title,
             bpm: req.body.bpm,
             key: req.body.key,
             mood: req.body.mood,
             user_id: req.session.user_id,
-            artist_id: dbArtistData.id
+            artist_id: req.body.artist_id
         })
         .then(dbSongData => res.json(dbSongData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
-        })
-    }
-    );
+    })
 });
 
 //PUT GIVE A LIKE
