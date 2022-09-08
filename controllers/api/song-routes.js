@@ -14,8 +14,8 @@ router.get('/', (req, res) => {
             'key',
             'mood',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
-            'like_count']
+            // [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
+            // 'like_count']
         ],
         include: [
             {
@@ -48,8 +48,8 @@ router.get('/:id', (req, res) => {
             'key',
             'mood',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
-            'like_count']
+            // [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
+            // 'like_count']
         ],
         include: [
             {
@@ -77,18 +77,26 @@ router.get('/:id', (req, res) => {
 
 //CREATE SONG
 router.post('/', checkAuth, (req, res) => {
-    Song.create({
-        title: req.body.title,
-        bpm: req.body.bpm,
-        key: req.body.key,
-        mood: req.body.mood,
-        user_id: req.session.user_id
+    Artist.create({
+        artist_name: req.body.artist_name,
+        artist_webpage: req.body.artist_webpage
     })
-    .then(dbSongData => res.json(dbSongData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    .then(dbArtistData => {
+        Song.create({
+            title: req.body.title,
+            bpm: req.body.bpm,
+            key: req.body.key,
+            mood: req.body.mood,
+            user_id: req.session.user_id,
+            artist_id: dbArtistData.id
+        })
+        .then(dbSongData => res.json(dbSongData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
+    }
+    );
 });
 
 //PUT GIVE A LIKE
