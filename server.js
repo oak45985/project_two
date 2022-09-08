@@ -40,12 +40,13 @@ app.use(require(routes));
 
 
 db.sequelize.sync({ force: false }).then(function() {
-    app.listen(PORT, function() {
-        console.log("We're in",
-        PORT,
-        PORT
-        )
+    app.listen(PORT, function(err) {
+        if (!err)
+        console.log("listening on PORT" + PORT);
     });
-});
+    })
+    .catch(function(err){
+        console.log(err, "nope");
+    });
 
-module.exports = app;
+// module.exports = app;
