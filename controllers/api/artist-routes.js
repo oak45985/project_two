@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
             'artist_name',
             'artist_webpage'
         ],
-        order: [['title', 'DESC']],
         include: [
             {
                 model: Song,
@@ -42,7 +41,6 @@ router.get('/:id', (req, res) => {
             'artist_name',
             'artist_webpage'
         ],
-        order: [['title', 'DESC']],
         include: [
             {
                 model: Song,

@@ -2,18 +2,19 @@ async function uploadSong(event) {
     event.preventDefault();
 
     const title = document.querySelector('input[name="song-title"]').value;
-    const artist = document.querySelector('input[name="song-artist"]').value;
-    const webpage = document.querySelector('input[name="song-artist-wp"]').value;
     const bpm = document.querySelector('input[name="song-bpm"]').value;
     const key = document.querySelector('input[name="song-key"]').value;
+    const artist_id = document.querySelector('select[name="artist-select"]').value;
 
-    if (title && artist && webpage && bpm && key) {
+    if (title && bpm && key && artist_id) {
+        console.log(title, bpm, key, artist_id);
         const response = await fetch(`/api/songs`, {
             method: 'POST',
             body: JSON.stringify({
                 title,
                 bpm,
-                key
+                key,
+                artist_id
             }),
             headers: {
                 'Content-Type': 'application/json'

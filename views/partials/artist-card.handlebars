@@ -1,0 +1,18 @@
+<div class="artist">
+    <div class="artist-card">
+        <h1><a href="{{artist_webpage}}" target="_blank">{{artist_name}}</a></h1>
+    </div>
+    <div>
+        {{#if songs.length}}
+        <section>
+            <ul>
+                {{#each songs as |song|}}
+                <li>
+                    {{song.title}}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+        {{/if}}
+    </div>
+</div>
