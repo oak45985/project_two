@@ -50,7 +50,6 @@
     background-image: url('../../images/image-banner.jpeg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed, -120px;
 }
 
 #Logo-con a {
