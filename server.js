@@ -4,6 +4,8 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers/');
 
+var db = require("./models");
+
 const app = express();
 const PORT = process.env.PORT || 3007;
 
@@ -34,8 +36,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require('./controllers/'));
+app.use(require(routes));
 
-sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log("We're in"));
+
+db.sequelize.sync({ force: false }).then(function() {
+    app.listen(PORT, function() {
+        console.log("We're in",
+        PORT,
+        PORT
+        )
+    });
 });
+
+module.exports = app;
