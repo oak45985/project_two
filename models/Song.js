@@ -74,4 +74,10 @@ Song.init(
     }
 );
 
+// Song.bulkCreate([
+//     {song_url: "https://soundcloud.com/unichordofficial/by-your-side", title: "UNICHORD - By Your Side", bpm: "150", key: "E major"},
+//     {song_url: "https://soundcloud.com/chiphvzvrd/bvller", title: "CHIP HVZVRD - BVLLER", bpm: "128", key: "G major"},
+//     {song_url: "https://soundcloud.com/chippena/chp-frend", title: "CHiP - FRiEND", bpm: "150", key: "D major"}
+// ]);
+
 module.exports = Song;
