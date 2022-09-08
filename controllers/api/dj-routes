@@ -1,0 +1,25 @@
+// const router = require('express').Router();
+
+// const { Dj } = require('../../models');
+
+// router.get('/discover', (req, res) => {
+//   Dj.findAll({
+//     attributes: [
+//       'id',
+//       'dj_name',
+//       'dj_webpage',
+
+//       [sequelize.literal('SELECT * FROM dj')]
+//     ]
+//   })
+//     .then(dbDiscData => {
+//       // pass a single post object into the homepage template
+//       res.render('discover', dbDiscData[0].get({ plain:true }));
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
+
+// module.exports = router;
