@@ -2,8 +2,6 @@ async function uploadSong(event) {
     event.preventDefault();
 
     const title = document.querySelector('input[name="song-title"]').value;
-    const artist_name = document.querySelector('input[name="song-artist"]').value;
-    const artist_webpage = document.querySelector('input[name="song-artist-wp"]').value;
     const bpm = document.querySelector('input[name="song-bpm"]').value;
     const key = document.querySelector('input[name="song-key"]').value;
 

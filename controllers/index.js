@@ -7,7 +7,7 @@ const artistRoutes = require('./artistlist-routes');
 router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
 router.use('/profile', profileRoutes);
-router.use('/artists', artistRoutes);
+router.use('/artistupload', artistRoutes);
 
 router.use((req, res) => {
     res.status(404).end();

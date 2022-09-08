@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Song, User, Like, Artist } = require('../models');
+const checkAuth = require('../utils/auth');
 
 //GET ALL ARTISTS
 router.get('/', (req, res) => {
@@ -11,13 +12,12 @@ router.get('/', (req, res) => {
             'artist_name',
             'artist_webpage'
         ],
-        order: [['title', 'DESC']],
         include: [
             {
                 model: Song,
                 attributes: ['id', 'title', 'bpm', 'key', 'mood',
-                [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
-                    'like_count']
+                // [sequelize.literal('(SELECT COUNT(*) FROM like WHERE song.id = like.song_id)'),
+                //     'like_count']
                 ],
                 include: {
                     model: User,
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
     })
     .then(dbArtistData => {
         const artists = dbArtistData.map(artist => artist.get({ plain: true }));
-        res.render('artistpage', {
+        res.render('/artistupload', {
             artists,
             loggedIn: req.session.loggedIn
         });
@@ -50,7 +50,6 @@ router.get('/artist/:id', (req, res) => {
             'artist_name',
             'artist_webpage'
         ],
-        order: [['title', 'DESC']],
         include: [
             {
                 model: Song,
@@ -79,5 +78,20 @@ router.get('/artist/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+//CREATE AN ARTIST
+router.post('/', checkAuth, (req, res) => {
+    Artist.create({
+        artist_name: req.body.artist_name,
+        artist_webpage: req.body.artist_webpage,
+        user_id: req.session.user_id
+    })
+    .then(dbArtistData => res.json(dbArtistData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 
 module.exports = router;
