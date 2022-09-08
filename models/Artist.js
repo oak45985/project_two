@@ -45,4 +45,10 @@ Artist.init(
     }
 )
 
+// Artist.bulkCreate([
+//     {artist_name: "Chip Hvzvrd", artist_webpage: "https://soundcloud.com/chiphvzvrd"},
+//     {artist_name: "CHiP", artist_webpage: "https://soundcloud.com/chippena"},
+//     {artist_name: "UNICHORD", artist_webpage: "https://soundcloud.com/unichordofficial"}
+// ]);
+
 module.exports = Artist;
