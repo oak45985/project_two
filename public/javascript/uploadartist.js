@@ -17,7 +17,7 @@ async function uploadArtist(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/uploadsong');
         } else {
             alert(response.statusText);
         };

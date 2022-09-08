@@ -1,8 +1,3 @@
-<h1>You're now logged in!</h1>
-
-<a href="/artistupload">Upload Artist</a>
-
-{{!-- 
 <form class="new-song">
     <div>
         <label for="song-title">TITLE:</label>
@@ -19,18 +14,6 @@
     <div>
         <button type="submit">UPLOAD SONG</button>
     </div>
-</form> --}}
-{{#if songs.length}}
-<section>
-    <h2>Songs You've Uploaded</h2>
-    <ul>
-        {{#each songs as |song|}}
-        <li>
-            {{>song-card song}}
-        </li>
-        {{/each}}
-    </ul>
-</section>
-{{/if}}
+</form>
 
-{{!-- <script src="/javascript/uploadsong.js"></script> --}}
+<script src="/javascript/uploadsong.js"></script>

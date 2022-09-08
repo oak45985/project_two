@@ -5,13 +5,11 @@ async function uploadSong(event) {
     const bpm = document.querySelector('input[name="song-bpm"]').value;
     const key = document.querySelector('input[name="song-key"]').value;
 
-    if (title && artist_name && artist_webpage && bpm && key) {
+    if (title && bpm && key) {
         const response = await fetch(`/api/songs`, {
             method: 'POST',
             body: JSON.stringify({
                 title,
-                artist_name,
-                artist_webpage,
                 bpm,
                 key
             }),

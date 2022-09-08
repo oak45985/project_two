@@ -1,0 +1,11 @@
+{{#if artists.length}}
+<section>
+    <ul>
+        {{#each artists as |artist|}}
+        <li>
+            {{>artist-card artist}}
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}

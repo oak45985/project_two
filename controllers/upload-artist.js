@@ -3,8 +3,7 @@ const sequelize = require('../config/connection');
 const { Song, User, Like, Artist } = require('../models');
 const checkAuth = require('../utils/auth');
 
-//GET ALL ARTISTS
-router.get('/', (req, res) => {
+router.get('/', checkAuth, (req, res) => {
     Artist.findAll({
         order: [['artist_name', 'DESC']],
         attributes: [
@@ -28,7 +27,7 @@ router.get('/', (req, res) => {
     })
     .then(dbArtistData => {
         const artists = dbArtistData.map(artist => artist.get({ plain: true }));
-        res.render('artists', {
+        res.render('uploadartist', {
             artists,
             loggedIn: req.session.loggedIn
         });
@@ -39,47 +38,6 @@ router.get('/', (req, res) => {
     });
 });
 
-//GET ONE ARTIST
-router.get('/artist/:id', (req, res) => {
-    Artist.findOne({
-        where: {
-            id: req.params.id
-        },
-        attributes: [
-            'id',
-            'artist_name',
-            'artist_webpage'
-        ],
-        include: [
-            {
-                model: Song,
-                attributes: ['id', 'title', 'bpm', 'key', 'mood'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            }
-        ]
-    })
-    .then(dbArtistData => {
-        if (!dbArtistData) {
-            res.status(404).json({ message: 'No Artist matches ID' });
-            return;
-        }
-        const artist = dbArtistData.get({ plain: true });
-
-        res.render('sing-artist', {
-            artist,
-            loggedIn: req.session.loggedIn
-        });
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
-
-//CREATE AN ARTIST
 router.post('/', checkAuth, (req, res) => {
     Artist.create({
         artist_name: req.body.artist_name,
