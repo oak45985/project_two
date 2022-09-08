@@ -1,0 +1,14 @@
+<div class="container-fluid" id="track-con">
+    <div class="row" id="track-row">
+        <div class="col" id="track-col">
+            <h1>Trending Tracks:</h1>
+            <ul class="track-list">
+            {{#each songs as |song| }}
+                <li>
+                {{> song-card song }}
+                </li>
+            {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>

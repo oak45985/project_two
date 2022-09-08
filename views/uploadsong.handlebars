@@ -1,0 +1,30 @@
+<form class="new-song">
+    <div>
+        <label for="artist-select">Choose an Artist:</label>
+        <select name="artist-select" id="artist-select">
+            {{#if artists.length}}
+                <option value="">--Please choose an option--</option>
+                    {{#each artists as |artist|}}
+                        {{> artist-list artist}}
+                    {{/each}}   
+            {{/if}}
+        </select>
+    </div>
+    <div>
+        <label for="song-title">TITLE:</label>
+        <input type="text" id="song-title" name="song-title"/>
+    </div>
+    <div>
+        <label for="song-bpm">BPM:</label>
+        <input type="text" id="song-bpm" name="song-bpm"/>
+    </div>
+    <div>
+        <label for="song-key">KEY:</label>
+        <input type="text" id="song-key" name="song-key"/>
+    </div>
+    <div>
+        <button type="submit">UPLOAD SONG</button>
+    </div>
+</form>
+
+<script src="/javascript/uploadsong.js"></script>

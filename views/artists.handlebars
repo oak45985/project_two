@@ -1,0 +1,25 @@
+<div class="container-fluid" id="artist-con">
+    <div class="row" id="artist-row">
+        <div class="col" id="artist-col">
+            <h1>Who is Trending?</h1>
+            <br>
+            {{#if artists.length}}
+                <section class="artist-section">
+                    <ul>
+                    {{#each artists as |artist|}}
+                        <li>
+                            <div id="art-card">
+                                <h3>{{>artist-list-card artist}}</h3>
+                                    <a href="{{artist.artist_webpage}}">{{artist.artist_webpage}}</a>
+                            </div>
+                            <div>
+                                <img src="../images/player_icon.png" alt="music-player-img">
+                            </div>
+                        </li>
+                    {{/each}}
+                    </ul>
+                </section>
+            {{/if}}
+        </div>
+    </div>
+</div>

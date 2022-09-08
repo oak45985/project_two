@@ -1,0 +1,17 @@
+<h1>You're now logged in!</h1>
+
+<a href="/uploadartist">Upload Artist</a>
+<a href="/uploadsong">Upload A Track</a>
+
+{{#if songs.length}}
+<section>
+    <h2>Songs You've Uploaded</h2>
+    <ul>
+        {{#each songs as |song|}}
+        <li>
+            {{>song-card song}}
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}

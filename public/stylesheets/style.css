@@ -1,0 +1,239 @@
+:root {
+    --tan: #F7ECDE;
+    --cream: #E9DAC1;
+    --teal: #9ED2C6;
+    --green: #54BAB9;
+    --light-blue: #A6D1E6;
+    --navy: #7F5283;
+    --dark-gray: #3D3C42; 
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: url('../fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family:'Oswald';
+  src: url('../fonts/Oswald-VariableFont_wght.ttf');
+}
+
+#Logo-con {
+  font-family: 'Mont';
+  text-align: center;
+  font-size: 50px;
+  background-color: var(--light-gray);
+}
+
+#Logo-con a {
+  color: #9ED2C6;
+}
+
+#Logo-con a:hover {
+  color: var(--light-blue);
+  text-decoration: none;
+}
+
+nav a {
+  color:var(--navy);
+  font-family: 'Oswald';
+  text-decoration: none;
+  padding:20px;
+}
+
+nav a:hover {
+  color:var(--light-blue);
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Oswald';
+}
+
+#login-con {
+  background: var(--light-blue);
+  color:var(--navy);
+  font-family: 'Mont';
+  padding:20px;
+  opacity: 95%;
+}
+
+#login-con input {
+  opacity: 60%;
+}
+
+#login-con p {
+  font-style: italic;
+}
+
+#signup-con {
+  background: var(--light-blue);
+  color:var(--navy);
+  font-family: 'Mont';
+  padding:20px 20px 20px 100px;
+  opacity: 95%;
+}
+
+#signup-con input {
+  opacity: 60%;
+}
+
+#newsong-con {
+  padding-left: 40px;
+  padding-top: 40px;
+}
+
+#artist-con {
+  font-family: 'Mont';
+}
+
+#artist-con {
+  padding-top: 50px;
+}
+
+#artist-col h1 {
+  color: var(--dark-gray);
+}
+
+#artist-col a {
+  color: var(--navy);
+}
+#artist-col a:hover {
+  color: #9ED2C6;
+}
+
+#artist-col li {
+  list-style-type:decimal-leading-zero;
+}
+
+#artist-col img {
+  padding-bottom: 20px;
+}
+
+#art-card {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: var(--light-blue) 2px solid;
+  border-radius: 2%;
+}
+
+#track-col {
+  color:var(--navy)
+}
+
+#track-col h1 {
+  font-family: 'Mont';
+  color: var(--dark-gray);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.song {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: var(--light-blue) 2px solid;
+  border-radius: 2%;
+}
+
+footer{
+  text-align: center;
+  padding-top: 50px;
+  font-family: 'Oswald';
+} 
+
+@font-face {
+    font-family: 'Mont';
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family:'Oswald';
+    src: url('../fonts/Oswald-VariableFont_wght.ttf');
+}
+
+#Logo-con {
+    font-family: 'Mont';
+    text-align: center;
+    font-size: 50px;
+    background-color: var(--light-gray);
+}
+
+#logo-col {
+    background-image: url('../../images/image-banner.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#Logo-con a {
+    color: #9ED2C6;
+}
+
+#Logo-con a:hover {
+    color: var(--light-blue);
+    text-decoration: none;
+}
+
+nav a {
+    color:var(--navy);
+    font-family: 'Oswald';
+    text-decoration: none;
+    padding:20px;
+}
+
+nav a:hover {
+    color:var(--light-blue);
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Oswald';
+    background-color:#A6D1E6;
+}
+
+#login-con {
+    background: var(--light-blue);
+    color:var(--navy);
+    font-family: 'Mont';
+    padding:20px;
+    opacity: 95%;
+}
+
+#login-con input {
+    opacity: 60%;
+}
+
+#login-con p {
+    font-style: italic;
+}
+
+#signup-con {
+    background: var(--light-blue);
+    color:var(--navy);
+    font-family: 'Mont';
+    padding:20px 20px 20px 100px;
+    opacity: 95%;
+}
+
+#signup-con input {
+    opacity: 60%;
+}
+
+#newsong-con {
+    padding-left: 40px;
+    padding-top: 40px;
+}
+
+footer{
+    text-align: center;
+    padding-top: 50px;
+    font-family: 'Oswald';
+   
+
+}
+
+p {
+    font-size: larger;
+    text-align: center;
+    text-decoration-color: #7F5283;
+}
+
