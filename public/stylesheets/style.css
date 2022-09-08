@@ -6,7 +6,7 @@
     --light-blue: #A6D1E6;
     --navy: #7F5283;
     --dark-gray: #3D3C42;
-    --light-gray: #ECECEC
+    --light-gray: #ECECEC;
 }
 
 @font-face {
@@ -82,6 +82,11 @@ body {
 #newsong-con {
     padding-left: 40px;
     padding-top: 40px;
+}
+
+#trend-con h1{
+    font-family: 'Mont';
+    text-transform: capitalize;
 }
 
 footer{

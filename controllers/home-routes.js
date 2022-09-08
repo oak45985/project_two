@@ -7,6 +7,11 @@ router.get('/home', (req, res) => {
     res.render('home');
   });
 
+  router.get('/discover', (req, res) => {
+    res.render('discover');
+  });
+
+  
 
 router.get('/', (req, res) => {
     Song.findAll({

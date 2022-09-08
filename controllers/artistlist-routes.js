@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Song, User, Like, Artist } = require('../models');
 
 //GET ALL ARTISTS
-router.get('/', (req, res) => {
+router.get('/artist', (req, res) => {
     Artist.findAll({
         order: [['artist_name', 'DESC']],
         attributes: [
