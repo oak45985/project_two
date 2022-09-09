@@ -2,17 +2,14 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers/');
 
-var db = require("./models");
+// var db = require("./models");
 
 const app = express();
 const PORT = process.env.PORT || 3007;
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-const helpers = require('./utils/helpers');
 
 require('dotenv').config();
 const sess = {
@@ -27,6 +24,8 @@ const sess = {
 
 app.use(session(sess));
 
+const helpers = require('./utils/helpers');
+
 const hbs = exphbs.create({ helpers });
 
 app.engine('handlebars', hbs.engine);
@@ -36,17 +35,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require(routes));
+app.use(require('./controllers/'));
 
 
-db.sequelize.sync({ force: false }).then(function() {
-    app.listen(PORT, function(err) {
-        if (!err)
-        console.log("listening on PORT" + PORT);
-    });
-    })
-    .catch(function(err){
-        console.log(err, "nope");
-    });
-
-// module.exports = app;
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log("we're in"));
+});
